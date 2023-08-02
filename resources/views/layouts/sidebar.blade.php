@@ -16,26 +16,36 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.index') }}">
             <i class="fas fa-user"></i>
-            <span>Data Customer</span></a>
+            <span>Data User</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('management.index') }}">
+            <i class="fas fa-user-cog"></i>
+            <span>Data Admin</span></a>
     </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
         <a class="nav-link" href="{{ route('room.index') }}">
             <i class="fas fa-door-open"></i>
-            <span>Data Room</span></a>
+            <span>Data Kamar</span></a>
     </li>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route('transaction.index') }}">
-            <i class="fas fa-tasks"></i>
-            <span>Data Transaction</span></a>
+        <a class="nav-link" href="{{ route('history.index') }}">
+            <i class="fas fa-server"></i>
+            <span> Data Reservasi</span></a>
+    </li>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('logout.admin') }}">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-
-
 
 </ul>
 <!-- End of Sidebar -->

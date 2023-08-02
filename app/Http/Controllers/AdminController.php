@@ -88,6 +88,7 @@ class AdminController extends Controller
         $customer = customer::findOrFail($id);
 
         $customer->delete();
-        return redirect('/customer');
+        Alert::success('Success','Data Deleted successfully!');
+        return redirect('/admin');
     }
 }

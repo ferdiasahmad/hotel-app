@@ -3,7 +3,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h5 class="m-0 font-weight-bold text-primary">Tambah Siswa</h5>
+        <h5 class="m-0 font-weight-bold text-primary">Tambah Management</h5>
     </div>
     <div class="card-body">
         <form class="customer" action="{{ route('admin.store') }}" method="POST">
@@ -36,7 +36,7 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-check"></i>
                 </span>
-                <span class="text">Add</span>
+                <span class="text">Tambah</span>
 
             </button>
 

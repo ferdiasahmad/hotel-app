@@ -4,7 +4,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Room</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Data Kamar</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -12,18 +12,20 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
+                        <th>Nama Admin</th>
+                        <th>Nama</th>
+                        <th>Deskripsi</th>
                         <th>Status</th>
-                        <th>Price</th>
-                        <th>Image</th>
-                        <th>Action</th>
+                        <th>Harga</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($room as $r )
                     <tr>
                         <td>{{ $r->id }}</td>
+                        <td>{{ $r->management?$r->management->username:''}}</td>
                         <td>{{ $r->name }}</td>
                         <td>{{ $r->description }}</td>
                         <td >{{ $r->status == '1' ? 'Available' : 'Not Available'}}</td>
@@ -38,7 +40,7 @@
                                     @csrf
                                     @method('DELETE')
                                    <button class="btn-sm btn-danger border-0" onclick="return confirm ('Are you sure?')">
-                                    <i class="fas fa-trash-alt mr-1"></i>Delete </button>
+                                    <i class="fas fa-trash-alt mr-1"></i>Hapus</button>
                                 </form>
                         </td>
                     </tr>
@@ -49,7 +51,7 @@
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">Add</span>
+                <span class="text">Tambah</span>
             </a>
         </div>
     </div>

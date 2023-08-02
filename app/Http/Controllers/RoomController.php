@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\room;
+use App\Models\management;
 use Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\New_;
 
 class RoomController extends Controller
@@ -16,7 +18,9 @@ class RoomController extends Controller
     public function index()
     {
         $room = room::all();
-        return view('room.index',compact('room'));
+        $management = management::all();
+
+        return view('room.index',compact('room', 'management'));
     }
 
     /**
@@ -25,7 +29,9 @@ class RoomController extends Controller
     public function create()
     {
         $room = room::all();
-        return view('room.create',compact('room'));
+        $user = management::where('level', 'admin')->get();
+
+        return view('room.create',compact('room','user'));
     }
 
     /**
@@ -39,6 +45,7 @@ class RoomController extends Controller
         $room->price =$request->price;
         $room->status=$request->status;
         $room->name =$request->name;
+        $room->management_id = Auth::guard('admin')->user()->id;
 
         if ($request->hasFile('image')){
             $file = $request->file('image');
@@ -80,6 +87,7 @@ class RoomController extends Controller
         $room->price =$request->price;
         $room->status=$request->status;
         $room->name =$request->name;
+        $room->management_id=Auth::guard('admin')->user()->id;
 
         if ($request->hasFile('image')){
             $file = $request->file('image');

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class room extends Model
 {
@@ -16,6 +17,13 @@ class room extends Model
         'description',
         'price',
         'status',
-        'image'
+        'image',
+        'management_id'
+
     ];
+    public function management()
+    {
+        return $this->belongsTo(management::class, 'management_id', 'id');
+    }
+
 }

@@ -16,7 +16,7 @@
                         <th>Email</th>
                         <th>No Telephone</th>
                         <th>Password</th>
-                        <th>Action</th>
+                        {{-- <th>Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@
                         <td>{{ $c->email }}</td>
                         <td>{{ $c->no_telp}}</td>
                         <td>{{ $c->password }}</td>
-                        <td  class="d-flex justify-content-center" >
+                        {{-- <td  class="d-flex justify-content-center" >
                             <a href="{{ route('admin.edit', $c->id) }}"
                                 class="btn btn-sm btn-success align-center mr-3 "><i class="fas fa-edit mr-1 "></i>Edit</a>
                                 <form id="delete-form{{ $c->id }}"
@@ -38,17 +38,17 @@
                                    <button class="btn-sm btn-danger border-0" onclick="return confirm ('Are you sure?')">
                                     <i class="fas fa-trash-alt mr-1"></i>Delete </button>
                                 </form>
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('admin.create') }}" class="btn btn-primary btn-icon-split">
+            {{-- <a href="{{ route('admin.create') }}" class="btn btn-primary btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
                 <span class="text">Add</span>
-            </a>
+            </a> --}}
         </div>
     </div>
 </div>
